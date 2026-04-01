@@ -2,46 +2,245 @@
 <html lang="it">
 <head>
   <meta charset="UTF-8">
-  <title>Apicoltura Baroni</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Apicoltura Baroni | Miele di Valtellina</title>
+  <style>
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+      background: #f6f3ee;
+      color: #222;
+      line-height: 1.6;
+    }
+
+    .hero {
+      position: relative;
+      min-height: 78vh;
+      background-image: linear-gradient(rgba(0,0,0,0.42), rgba(0,0,0,0.42)), url('sanrocco.jpg');
+      background-size: cover;
+      background-position: center;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      padding: 30px;
+    }
+
+    .hero-box {
+      max-width: 760px;
+      color: white;
+      background: rgba(0, 0, 0, 0.30);
+      padding: 32px 24px;
+      border-radius: 18px;
+    }
+
+    .hero h1 {
+      margin: 0 0 12px 0;
+      font-size: 48px;
+      line-height: 1.1;
+    }
+
+    .hero p {
+      margin: 10px 0;
+      font-size: 20px;
+    }
+
+    .badge {
+      display: inline-block;
+      margin-top: 18px;
+      padding: 10px 16px;
+      background: #d9a441;
+      color: #111;
+      font-weight: bold;
+      border-radius: 999px;
+      font-size: 15px;
+    }
+
+    .section {
+      max-width: 1100px;
+      margin: 0 auto;
+      padding: 70px 22px;
+    }
+
+    .section h2 {
+      margin-top: 0;
+      font-size: 34px;
+      text-align: center;
+      margin-bottom: 18px;
+    }
+
+    .intro-text {
+      max-width: 800px;
+      margin: 0 auto;
+      text-align: center;
+      font-size: 18px;
+    }
+
+    .about {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 32px;
+      align-items: center;
+    }
+
+    .about img {
+      width: 100%;
+      border-radius: 18px;
+      display: block;
+      min-height: 420px;
+      object-fit: cover;
+    }
+
+    .card-text {
+      background: white;
+      padding: 28px;
+      border-radius: 18px;
+      box-shadow: 0 8px 24px rgba(0,0,0,0.08);
+    }
+
+    .mieli {
+      background: #111;
+      color: white;
+    }
+
+    .cards {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 22px;
+      margin-top: 35px;
+    }
+
+    .card {
+      background: #1d1d1d;
+      border-radius: 18px;
+      padding: 24px;
+      box-shadow: 0 8px 24px rgba(0,0,0,0.18);
+    }
+
+    .card h3 {
+      margin-top: 0;
+      margin-bottom: 10px;
+      font-size: 24px;
+      color: #f0c96a;
+    }
+
+    .contact-box {
+      max-width: 760px;
+      margin: 0 auto;
+      background: white;
+      border-radius: 18px;
+      padding: 32px;
+      box-shadow: 0 8px 24px rgba(0,0,0,0.08);
+      text-align: center;
+    }
+
+    .footer {
+      background: #111;
+      color: #ddd;
+      text-align: center;
+      padding: 24px;
+      font-size: 14px;
+    }
+
+    @media (max-width: 900px) {
+      .about,
+      .cards {
+        grid-template-columns: 1fr;
+      }
+
+      .hero h1 {
+        font-size: 36px;
+      }
+
+      .hero p {
+        font-size: 18px;
+      }
+
+      .about img {
+        min-height: 280px;
+      }
+    }
+  </style>
 </head>
+<body>
 
-<body style="font-family: Arial; margin:0;">
+  <section class="hero">
+    <div class="hero-box">
+      <h1>Miele di Valtellina</h1>
+      <p>Produzione esclusivamente da pascoli alpini</p>
+      <div class="badge">Prodotto certificato “Prodotto di Montagna”</div>
+    </div>
+  </section>
 
-  <!-- SEZIONE 1 -->
-  <div style="padding:40px; text-align:center; background:#f5f5f5;">
-    <img src="sanrocco.jpg" style="width:100%; max-width:800px;">
-    <h1>Miele di Valtellina</h1>
-    <p>Produzione esclusiva da pascoli alpini</p>
-    <p><strong>🏔️ Miele certificato “Prodotto di Montagna”</strong></p>
-  </div>
-
-  <!-- SEZIONE 2 -->
-  <div style="padding:40px;">
+  <section class="section">
     <h2>Chi sono</h2>
-    <p>Sono Francesco Baroni, zootecnico e apicoltore in Valtellina.</p>
-    <p>Lavoro seguendo i ritmi naturali delle stagioni, nel rispetto dell’ambiente di montagna e delle api.</p>
-  </div>
+    <div class="about">
+      <img src="sanrocco.jpg" alt="Apiario in Valtellina">
+      <div class="card-text">
+        <p>
+          Sono Francesco Baroni, zootecnico e apicoltore in Valtellina.
+        </p>
+        <p>
+          Lavoro in un contesto montano, dove clima, fioriture e altitudine danno origine a mieli diversi ed autentici, strettamente legati al territorio.
+        </p>
+      </div>
+    </div>
+  </section>
 
-  <!-- SEZIONE 3 -->
-  <div style="padding:40px; background:#f9f9f9;">
-    <h2>I miei mieli di montagna</h2> 
-    <p><strong>La produzione è stagionale e limitata a tipologie e quantitativi realmente ottenuti.</p>
-    <p><strong>Millefiori:</strong> prodotto dai pascoli valtellinesi.</p>
-    <p><strong>Acacia:</strong> delicato e chiaro.</p>
-    <p><strong>Tiglio:</strong> profumo intenso.</p>
-    <p><strong>Rododendro e Fiori delle Alpi:</strong> raro e di alta quota.</p>
-  </div>
+  <section class="section mieli">
+    <h2>I miei mieli</h2>
+    <p class="intro-text" style="color:#ddd;">
+      Il marchio “Prodotti di Montagna” valorizza origine, ambiente e qualità dei mieli.
+      La produzione è stagionale e limitata ai quantitativi realmente ottenuti.
+    </p>
 
-  <!-- SEZIONE 4 -->
-  <div style="padding:40px;">
-    <h2>Contatti</h2>
-    <p>Apicoltura Baroni Francesco</p>
-    <p>Via Molini 10, Ponte in Valtellina</p>
-    <p>Partita Iva 00843770140</p>
-    <p>Email: francesco.baroni.fb@gmail.com</p>
-    <p>Telefono: (+39) 3290624159</p>
-  </div>
+    <div class="cards">
+      <div class="card">
+        <h3>Millefiori</h3>
+        <p>Prodotto dai pascoli valtellinesi a primavera ed in estate.</p>
+      </div>
+
+      <div class="card">
+        <h3>Acacia</h3>
+        <p>Delicato e chiaro.</p>
+      </div>
+
+      <div class="card">
+        <h3>Tiglio</h3>
+        <p>Profumo intenso.</p>
+      </div>
+
+      <div class="card">
+        <h3>Castagno</h3>
+        <p>Ambrato e intenso.</p>
+      </div>
+
+      <div class="card">
+        <h3>Rododendro e Fiori delle Alpi</h3>
+        <p>Raro e di alta quota.</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="contact-box">
+      <h2>Contatti</h2>
+      <p><strong>Apicoltura Baroni Francesco</strong></p>
+      <p>Via Molini 10</p>
+      <p>23026 Ponte in Valtellina (Sondrio)</p>
+      <p>Partita IVA 00843770140</p>
+      <p>francesco.baroni.fb@gmail.com</p>
+      <p>(+39) 3290624159</p>
+    </div>
+  </section>
+
+  <footer class="footer">
+    © Apicoltura Baroni Francesco
+  </footer>
 
 </body>
 </html>
