@@ -24,7 +24,7 @@
 
     .hero {
       min-height: 85vh;
-     background-image: linear-gradient(rgba(0,0,0,0.16), rgba(0,0,0,0.16)), url('sanrocco.jpg');
+      background-image: linear-gradient(rgba(0,0,0,0.16), rgba(0,0,0,0.16)), url('sanrocco.jpg');
       background-size: cover;
       background-position: center;
       display: flex;
@@ -34,13 +34,21 @@
       padding: 30px 20px;
     }
 
-   .hero-box {
-  max-width: 760px;
-  color: white;
-  background: rgba(0, 0, 0, 0.10);
-  padding: 36px 28px;
-  border-radius: 20px;
-}
+    .hero-box {
+      max-width: 760px;
+      color: white;
+      background: rgba(0, 0, 0, 0.10);
+      padding: 36px 28px;
+      border-radius: 20px;
+    }
+
+    .hero-brand {
+      margin: 0 0 14px 0;
+      font-size: 20px;
+      font-weight: 600;
+      letter-spacing: 0.5px;
+      color: #ffffff;
+    }
 
     .hero h1 {
       margin: 0 0 12px 0;
@@ -101,46 +109,46 @@
     }
 
     .mieli {
-  background: #efe7da;
-  color: #2b2b2b;
-}
+      background: #efe7da;
+      color: #2b2b2b;
+    }
 
-.intro-text {
-  max-width: 850px;
-  margin: 0 auto 35px auto;
-  text-align: center;
-  font-size: 18px;
-  color: #4a433b;
-}
+    .intro-text {
+      max-width: 850px;
+      margin: 0 auto 35px auto;
+      text-align: center;
+      font-size: 18px;
+      color: #4a433b;
+    }
 
-.cards {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-  gap: 22px;
-  margin-top: 30px;
-}
+    .cards {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 22px;
+      margin-top: 30px;
+    }
 
-.card {
-  width: 260px;
-  background: #fffaf3;
-  border-radius: 18px;
-  padding: 24px;
-  box-shadow: 0 8px 24px rgba(0,0,0,0.08);
-  min-height: 170px;
-}
+    .card {
+      width: 260px;
+      background: #fffaf3;
+      border-radius: 18px;
+      padding: 24px;
+      box-shadow: 0 8px 24px rgba(0,0,0,0.08);
+      min-height: 170px;
+    }
 
-.card h3 {
-  margin-top: 0;
-  margin-bottom: 10px;
-  font-size: 24px;
-  color: #b8831f;
-}
+    .card h3 {
+      margin-top: 0;
+      margin-bottom: 10px;
+      font-size: 24px;
+      color: #b8831f;
+    }
 
-.card p {
-  margin: 0;
-  color: #3f3a34;
-}
+    .card p {
+      margin: 0;
+      color: #3f3a34;
+    }
 
     .contact-box {
       max-width: 760px;
@@ -200,24 +208,17 @@
       }
     }
   </style>
-  .hero-brand {
-  margin: 0 0 14px 0;
-  font-size: 20px;
-  font-weight: 600;
-  letter-spacing: 0.5px;
-  color: #ffffff;
-}
 </head>
 <body>
 
   <section class="hero">
-  <div class="hero-box">
-    <p class="hero-brand">Apicoltura Baroni Francesco</p>
-    <h1>Miele di Valtellina</h1>
-    <p>Esclusivamente da pascoli alpini</p>
-    <div class="badge">Miele certificato “Prodotto di Montagna”</div>
-  </div>
-</section>
+    <div class="hero-box">
+      <p class="hero-brand">Apicoltura Baroni Francesco</p>
+      <h1>Miele di Valtellina</h1>
+      <p>Esclusivamente da pascoli alpini</p>
+      <div class="badge">Miele certificato “Prodotto di Montagna”</div>
+    </div>
+  </section>
 
   <section class="section">
     <h2>Chi sono</h2>
@@ -231,7 +232,7 @@
   </section>
 
   <section class="section mieli">
-    <h2>I Mieli di Montagna</h2>
+    <h2>I mieli della Valtellina</h2>
     <p class="intro-text">
       Il marchio “Prodotto di Montagna” valorizza origine, ambiente e qualità dei mieli.
       La produzione è stagionale e limitata ai quantitativi realmente ottenuti.
@@ -276,10 +277,12 @@
       <p>(+39) 3290624159</p>
     </div>
   </section>
-<section class="section">
-  <h2>Il mio miele</h2>
-  <img src="mieli.jpg" style="border-radius:20px; max-width:900px; margin:30px auto; display:block;">
-</section>
+
+  <section class="section">
+    <h2>Il mio miele</h2>
+    <img src="mieli.jpg" alt="Vasetti di miele" style="border-radius:20px; max-width:900px; margin:30px auto; display:block;">
+  </section>
+
   <footer class="footer">
     © Apicoltura Baroni Francesco
   </footer>
