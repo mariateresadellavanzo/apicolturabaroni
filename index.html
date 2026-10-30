@@ -11,8 +11,13 @@
       box-sizing: border-box;
     }
 
+    html {
+      width: 100%;
+    }
+
     body {
       margin: 0;
+      width: 100%;
       font-family: Arial, sans-serif;
       background: #f5f1ea;
       color: #222;
@@ -21,6 +26,7 @@
 
     img {
       max-width: 100%;
+      height: auto;
       display: block;
     }
 
@@ -31,6 +37,8 @@
     a:hover {
       color: #ad812a;
     }
+
+    /* COPERTINA DESKTOP */
 
     .hero {
       min-height: 85vh;
@@ -53,7 +61,7 @@
     }
 
     .hero-brand {
-      margin: 0 0 14px 0;
+      margin: 0 0 14px;
       font-size: 20px;
       font-weight: 600;
       letter-spacing: 0.5px;
@@ -61,12 +69,12 @@
     }
 
     .hero h1 {
-      margin: 0 0 12px 0;
+      margin: 0 0 12px;
       font-size: 52px;
       line-height: 1.1;
     }
 
-    .hero p {
+    .hero-subtitle {
       margin: 0;
       font-size: 22px;
     }
@@ -84,9 +92,18 @@
 
     .marchio-montagna {
       width: 110px;
-      margin: 18px auto 0 auto;
+      margin: 18px auto 0;
       opacity: 0.88;
     }
+
+    /* INFORMAZIONI SOTTO LA COPERTINA:
+       VISIBILI SOLTANTO SU SMARTPHONE */
+
+    .hero-mobile-info {
+      display: none;
+    }
+
+    /* STRUTTURA GENERALE */
 
     .section {
       max-width: 1150px;
@@ -95,10 +112,12 @@
     }
 
     .section h2 {
-      margin: 0 0 18px 0;
+      margin: 0 0 18px;
       font-size: 36px;
       text-align: center;
     }
+
+    /* CHI SONO */
 
     .about {
       display: grid;
@@ -150,7 +169,7 @@
       background: #c18e2c;
     }
 
-    /* NUOVA SEZIONE: IL LAVORO DELL'APICOLTORE */
+    /* IL LAVORO DELL'APICOLTORE */
 
     .lavoro {
       background: #f5f1ea;
@@ -166,7 +185,7 @@
 
     .lavoro-item {
       display: grid;
-      grid-template-columns: 1fr 1fr;
+      grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
       gap: 45px;
       align-items: center;
       margin-bottom: 70px;
@@ -174,6 +193,11 @@
 
     .lavoro-item:last-child {
       margin-bottom: 0;
+    }
+
+    .lavoro-foto,
+    .lavoro-testo {
+      min-width: 0;
     }
 
     .lavoro-item img {
@@ -231,19 +255,11 @@
       order: 1;
     }
 
-    /* SEZIONI ORIGINALI */
+    /* I MIELI DELLA VALTELLINA */
 
     .mieli {
       background: #efe7da;
       color: #2b2b2b;
-    }
-
-    .intro-text {
-      max-width: 850px;
-      margin: 0 auto 35px auto;
-      text-align: center;
-      font-size: 18px;
-      color: #4a433b;
     }
 
     .mieli-text {
@@ -259,6 +275,8 @@
       margin: 0 0 22px;
     }
 
+    /* CONTATTI */
+
     .contact-box {
       max-width: 760px;
       margin: 0 auto;
@@ -272,7 +290,20 @@
     .contact-box p {
       margin: 10px 0;
       font-size: 18px;
+      overflow-wrap: anywhere;
     }
+
+    /* FOTOGRAFIA FINALE DEI MIELI */
+
+    .miele-foto {
+      width: 100%;
+      max-width: 900px;
+      height: auto;
+      margin: 30px auto;
+      border-radius: 20px;
+    }
+
+    /* PIE' DI PAGINA */
 
     .footer {
       background: #111;
@@ -298,7 +329,11 @@
       margin-top: 12px;
     }
 
-    @media (max-width: 900px) {
+    /* TABLET:
+       MANTENIAMO L'IMPOSTAZIONE GENERALE */
+
+    @media (max-width: 900px) and (min-width: 601px) {
+
       .hero {
         min-height: 72vh;
       }
@@ -307,12 +342,8 @@
         font-size: 38px;
       }
 
-      .hero p {
+      .hero-subtitle {
         font-size: 19px;
-      }
-
-      .hero-brand {
-        font-size: 18px;
       }
 
       .about {
@@ -320,66 +351,260 @@
       }
 
       .about img {
-        height: 300px;
+        height: 360px;
       }
 
       .section {
-        padding: 55px 18px;
-      }
-
-      .section h2 {
-        font-size: 30px;
-      }
-
-      .card-text,
-      .contact-box {
-        padding: 26px 20px;
-      }
-
-      .marchio-montagna {
-        width: 90px;
-      }
-
-      .mieli-text {
-        font-size: 18px;
-      }
-
-      .lavoro-intro {
-        margin-bottom: 40px;
-        font-size: 17px;
+        padding: 60px 22px;
       }
 
       .lavoro-item {
-        grid-template-columns: 1fr;
-        gap: 18px;
-        margin-bottom: 50px;
+        gap: 25px;
       }
 
       .lavoro-item img {
+        height: 300px;
+      }
+    }
+
+    /* VERSIONE SMARTPHONE */
+
+    @media (max-width: 600px) {
+
+      /* FOTO PANORAMICA */
+
+      .hero {
+        min-height: 0;
+        height: 58svh;
+        min-height: 360px;
+        max-height: 620px;
+        background-position: center center;
+        display: flex;
+        align-items: flex-end;
+        justify-content: center;
+        padding: 0;
+        position: relative;
+        isolation: isolate;
+      }
+
+      /* SFUMATURA LEGGERA SOLO IN BASSO */
+
+      .hero::before {
+        content: "";
+        position: absolute;
+        inset: 0;
+        z-index: -1;
+        background: linear-gradient(
+          to bottom,
+          transparent 58%,
+          rgba(0,0,0,0.50) 100%
+        );
+      }
+
+      .hero-box {
+        width: 100%;
+        max-width: none;
+        padding: 24px 18px 26px;
+        margin: 0;
+        border-radius: 0;
+        background: transparent;
+      }
+
+      .hero h1 {
+        margin: 0;
+        font-size: clamp(31px, 8vw, 43px);
+        line-height: 1.12;
+        color: white;
+        text-shadow: 0 2px 8px rgba(0,0,0,0.40);
+      }
+
+      /* NASCONDIAMO NELLA FOTO LE ALTRE SCRITTE */
+
+      .hero-brand,
+      .hero-subtitle,
+      .hero .badge,
+      .hero .marchio-montagna {
+        display: none;
+      }
+
+      /* BLOCCO INFORMATIVO SOTTO LA FOTO */
+
+      .hero-mobile-info {
+        display: block;
+        background: #f5f1ea;
+        padding: 25px 22px 30px;
+        text-align: center;
+      }
+
+      .mobile-brand {
+        margin: 0 0 8px;
+        font-size: 19px;
+        font-weight: 600;
+        color: #29251f;
+      }
+
+      .mobile-subtitle {
+        margin: 0 0 18px;
+        font-size: 16px;
+        color: #5c5448;
+      }
+
+      .mobile-quality {
+        margin: 0;
+        font-size: 14px;
+        font-weight: 600;
+        color: #80601e;
+      }
+
+      .mobile-marchio {
+        width: 76px;
         height: auto;
-        max-height: 420px;
+        margin: 12px auto 0;
+      }
+
+      /* SPAZIATURE GENERALI */
+
+      .section {
+        padding: 42px 18px;
+      }
+
+      .section h2 {
+        font-size: 29px;
+        margin-bottom: 20px;
+      }
+
+      /* CHI SONO */
+
+      .about {
+        grid-template-columns: minmax(0, 1fr);
+        gap: 22px;
+        margin-top: 15px;
+      }
+
+      .about img {
+        width: 100%;
+        height: auto;
+        max-height: 380px;
         aspect-ratio: 4 / 3;
         object-fit: cover;
       }
 
-      .lavoro-item.invertito .lavoro-foto,
+      .card-text {
+        padding: 24px 20px;
+        font-size: 16px;
+      }
+
+      .video-link {
+        margin-top: 26px;
+      }
+
+      .video-link p {
+        font-size: 16px;
+      }
+
+      .video-link a {
+        font-size: 15px;
+        padding: 11px 20px;
+      }
+
+      /* IL LAVORO DELL'APICOLTORE */
+
+      .lavoro-intro {
+        margin-bottom: 38px;
+        font-size: 16px;
+      }
+
+      .lavoro-item {
+        display: flex;
+        flex-direction: column;
+        gap: 17px;
+        margin-bottom: 45px;
+      }
+
+      .lavoro-foto,
+      .lavoro-testo {
+        width: 100%;
+      }
+
+      .lavoro-item .lavoro-foto {
+        order: 1;
+      }
+
+      .lavoro-item .lavoro-testo {
+        order: 2;
+      }
+
+      .lavoro-item.invertito .lavoro-foto {
+        order: 1;
+      }
+
       .lavoro-item.invertito .lavoro-testo {
-        order: initial;
+        order: 2;
+      }
+
+      .lavoro-item img {
+        width: 100%;
+        height: auto;
+        max-height: 380px;
+        aspect-ratio: 4 / 3;
+        object-fit: cover;
       }
 
       .lavoro-testo {
-        padding: 0 4px;
+        padding: 0 3px;
       }
 
       .lavoro-testo h3 {
-        font-size: 24px;
-        margin-bottom: 12px;
+        font-size: 23px;
+        margin-bottom: 10px;
       }
 
       .lavoro-testo p {
-        font-size: 17px;
+        font-size: 16px;
+        line-height: 1.7;
       }
+
+      .lavoro-link {
+        font-size: 14px;
+        overflow-wrap: anywhere;
+      }
+
+      /* MIELI */
+
+      .mieli-text {
+        font-size: 17px;
+        line-height: 1.7;
+      }
+
+      /* CONTATTI */
+
+      .contact-box {
+        width: 100%;
+        padding: 25px 17px;
+      }
+
+      .contact-box p {
+        font-size: 16px;
+      }
+
+      /* FOTO FINALE:
+         NESSUNO SCORRIMENTO LATERALE */
+
+      .miele-foto {
+        display: block;
+        width: 100%;
+        max-width: 100%;
+        height: auto;
+        margin: 20px auto 0;
+        border-radius: 16px;
+      }
+
+      .footer {
+        padding: 25px 18px;
+      }
+
     }
+
   </style>
 </head>
 
@@ -389,9 +614,16 @@
 
   <section class="hero">
     <div class="hero-box">
-      <p class="hero-brand">Apicoltura Baroni Francesco</p>
+
+      <p class="hero-brand">
+        Apicoltura Baroni Francesco
+      </p>
+
       <h1>Miele di Valtellina</h1>
-      <p>Esclusivamente da pascoli alpini</p>
+
+      <p class="hero-subtitle">
+        Esclusivamente da pascoli alpini
+      </p>
 
       <div class="badge">
         Miele certificato “Prodotto di Montagna”
@@ -402,21 +634,49 @@
         alt="Marchio Prodotto di Montagna"
         class="marchio-montagna"
       >
+
     </div>
   </section>
+
+  <!-- INFORMAZIONI VISIBILI SU SMARTPHONE -->
+
+  <div class="hero-mobile-info">
+
+    <p class="mobile-brand">
+      Apicoltura Baroni Francesco
+    </p>
+
+    <p class="mobile-subtitle">
+      Esclusivamente da pascoli alpini
+    </p>
+
+    <p class="mobile-quality">
+      Miele certificato “Prodotto di Montagna”
+    </p>
+
+    <img
+      src="marchio.jpg"
+      alt="Marchio Prodotto di Montagna"
+      class="mobile-marchio"
+    >
+
+  </div>
 
   <!-- CHI SONO -->
 
   <section class="section">
+
     <h2>Chi sono</h2>
 
     <div class="about">
+
       <img
         src="apicoltore.jpg"
-        alt="Apicoltore al lavoro"
+        alt="Francesco Baroni al lavoro"
       >
 
       <div class="card-text">
+
         <p>
           Sono Francesco Baroni, zootecnico e apicoltore
           in Valtellina.
@@ -437,10 +697,12 @@
           Il miele è esclusivamente di mia produzione,
           senza acquisti o miscelazioni di prodotto di terzi.
         </p>
+
       </div>
     </div>
 
     <div class="video-link">
+
       <p>
         <strong>
           Francesco Baroni racconta il suo lavoro
@@ -456,6 +718,7 @@
       >
         Guarda il video su YouTube
       </a>
+
     </div>
   </section>
 
@@ -473,7 +736,7 @@
         e conoscenza del territorio.
       </p>
 
-      <!-- 1. CURA DEGLI ALVEARI -->
+      <!-- CURA DEGLI ALVEARI -->
 
       <div class="lavoro-item">
 
@@ -486,6 +749,7 @@
         </div>
 
         <div class="lavoro-testo">
+
           <h3>La cura degli alveari</h3>
 
           <p>
@@ -494,11 +758,11 @@
             adattandosi alle condizioni
             dell'ambiente montano.
           </p>
-        </div>
 
+        </div>
       </div>
 
-      <!-- 2. SELEZIONE GENETICA -->
+      <!-- SELEZIONE GENETICA -->
 
       <div class="lavoro-item invertito">
 
@@ -511,6 +775,7 @@
         </div>
 
         <div class="lavoro-testo">
+
           <h3>La selezione genetica</h3>
 
           <p>
@@ -523,6 +788,7 @@
           </p>
 
           <div class="lavoro-link">
+
             <a
               href="https://www.aissa.info/lada-della-val-fraele/"
               target="_blank"
@@ -530,7 +796,9 @@
             >
               Il progetto Val Fraele – AISSA
             </a>
+
             <br>
+
             <a
               href="https://www.zac.at/"
               target="_blank"
@@ -538,12 +806,12 @@
             >
               ZAC – Associazione austriaca di selezione
             </a>
+
           </div>
         </div>
-
       </div>
 
-      <!-- 3. CONTROLLO DELLE COLONIE -->
+      <!-- CONTROLLO DELLE COLONIE -->
 
       <div class="lavoro-item">
 
@@ -556,6 +824,7 @@
         </div>
 
         <div class="lavoro-testo">
+
           <h3>Il controllo delle colonie</h3>
 
           <p>
@@ -568,7 +837,9 @@
           </p>
 
           <div class="lavoro-nota">
+
             Approfondimento tecnico:
+
             <a
               href="https://www.lapisonline.it/protocollo-baroni-biologico-vs-convenzionale-tecnica-apistica/"
               target="_blank"
@@ -576,12 +847,12 @@
             >
               Il Protocollo Baroni – l'apis
             </a>
+
           </div>
         </div>
-
       </div>
 
-      <!-- 4. MOVIMENTAZIONE DEGLI ALVEARI -->
+      <!-- MOVIMENTAZIONE DEGLI ALVEARI -->
 
       <div class="lavoro-item invertito">
 
@@ -594,6 +865,7 @@
         </div>
 
         <div class="lavoro-testo">
+
           <h3>La movimentazione degli alveari</h3>
 
           <p>
@@ -602,11 +874,11 @@
             alpini, valorizzando le diverse risorse
             nettarifere della Valtellina.
           </p>
-        </div>
 
+        </div>
       </div>
 
-      <!-- 5. CONFERIMENTO A CONAPI -->
+      <!-- CONFERIMENTO A CONAPI -->
 
       <div class="lavoro-item">
 
@@ -619,6 +891,7 @@
         </div>
 
         <div class="lavoro-testo">
+
           <h3>Il conferimento a CONAPI</h3>
 
           <p>
@@ -629,8 +902,8 @@
             Una parte è invece confezionata in vasetti
             per la vendita diretta.
           </p>
-        </div>
 
+        </div>
       </div>
 
     </div>
@@ -677,9 +950,17 @@
 
       <p>Partita IVA 00843770140</p>
 
-      <p>francesco.baroni.fb@gmail.com</p>
+      <p>
+        <a href="mailto:francesco.baroni.fb@gmail.com">
+          francesco.baroni.fb@gmail.com
+        </a>
+      </p>
 
-      <p>(+39) 3290624159</p>
+      <p>
+        <a href="tel:+393290624159">
+          (+39) 3290624159
+        </a>
+      </p>
 
     </div>
   </section>
@@ -692,8 +973,8 @@
 
     <img
       src="mieli.jpg"
-      alt="Vasetti di miele"
-      style="border-radius:20px; max-width:900px; margin:30px auto; display:block;"
+      alt="Vasetti di miele Apicoltura Baroni"
+      class="miele-foto"
       loading="lazy"
     >
 
