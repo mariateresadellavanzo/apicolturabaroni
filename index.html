@@ -22,6 +22,7 @@
       background: #f5f1ea;
       color: #222;
       line-height: 1.6;
+      overflow-x: hidden;
     }
 
     img {
@@ -65,7 +66,18 @@
       font-size: 20px;
       font-weight: 600;
       letter-spacing: 0.5px;
-      color: #ffffff;
+      color: white;
+    }
+
+    .brand-top,
+    .brand-main,
+    .brand-bottom {
+      display: inline;
+    }
+
+    .brand-top::after,
+    .brand-main::after {
+      content: " ";
     }
 
     .hero h1 {
@@ -382,8 +394,6 @@
         isolation: isolate;
       }
 
-      /* SFUMATURA INFERIORE */
-
       .hero::before {
         content: "";
         position: absolute;
@@ -405,22 +415,52 @@
         background: transparent;
       }
 
-      /* NOME AZIENDA IN ALTO */
+      /* NUOVA IDENTITA' AZIENDALE */
 
       .hero-brand {
-        display: block;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
         position: absolute;
-        top: 28px;
+        top: 25px;
         left: 12px;
         right: 12px;
         margin: 0;
-        font-size: 21px;
-        font-weight: 600;
-        letter-spacing: 0.3px;
-        line-height: 1.35;
         color: white;
         text-align: center;
-        text-shadow: 0 2px 7px rgba(0,0,0,0.55);
+        line-height: 1.1;
+        text-shadow: 0 2px 8px rgba(0,0,0,0.50);
+      }
+
+      .brand-top,
+      .brand-main,
+      .brand-bottom {
+        display: block;
+      }
+
+      .brand-top::after,
+      .brand-main::after {
+        content: none;
+      }
+
+      .brand-top {
+        font-size: 14px;
+        font-weight: 500;
+        letter-spacing: 3px;
+        margin-bottom: 4px;
+      }
+
+      .brand-main {
+        font-size: clamp(37px, 11vw, 53px);
+        font-weight: 700;
+        letter-spacing: 2px;
+      }
+
+      .brand-bottom {
+        font-size: 15px;
+        font-weight: 500;
+        letter-spacing: 4px;
+        margin-top: 3px;
       }
 
       /* TITOLO IN BASSO */
@@ -433,7 +473,7 @@
         text-shadow: 0 2px 8px rgba(0,0,0,0.40);
       }
 
-      /* INFORMAZIONI SPOSTATE SOTTO LA FOTO */
+      /* INFORMAZIONI SOTTO LA FOTO */
 
       .hero-subtitle,
       .hero .badge,
@@ -461,10 +501,25 @@
         color: #80601e;
       }
 
+      /* MARCHIO ORIGINALE IN TONDO BIANCO */
+
+      .mobile-marchio-circle {
+        width: 100px;
+        height: 100px;
+        margin: 16px auto 0;
+        padding: 10px;
+        background: white;
+        border-radius: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+      }
+
       .mobile-marchio {
-        width: 76px;
+        width: 100%;
         height: auto;
-        margin: 12px auto 0;
+        max-height: 100%;
+        object-fit: contain;
       }
 
       /* SPAZIATURE GENERALI */
@@ -477,8 +532,6 @@
         font-size: 29px;
         margin-bottom: 20px;
       }
-
-      /* RIDUZIONE SPAZIO PRIMA DI CHI SONO */
 
       .hero-mobile-info + .section {
         padding-top: 28px;
@@ -618,7 +671,9 @@
     <div class="hero-box">
 
       <p class="hero-brand">
-        Apicoltura Baroni Francesco
+        <span class="brand-top">APICOLTURA</span>
+        <span class="brand-main">BARONI</span>
+        <span class="brand-bottom">FRANCESCO</span>
       </p>
 
       <h1>Miele di Valtellina</h1>
@@ -652,11 +707,13 @@
       Miele certificato “Prodotto di Montagna”
     </p>
 
-    <img
-      src="marchio.jpg"
-      alt="Marchio Prodotto di Montagna"
-      class="mobile-marchio"
-    >
+    <div class="mobile-marchio-circle">
+      <img
+        src="marchio.jpg"
+        alt="Marchio Prodotto di Montagna"
+        class="mobile-marchio"
+      >
+    </div>
 
   </div>
 
