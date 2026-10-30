@@ -96,9 +96,6 @@
       opacity: 0.88;
     }
 
-    /* INFORMAZIONI SOTTO LA COPERTINA:
-       VISIBILI SOLTANTO SU SMARTPHONE */
-
     .hero-mobile-info {
       display: none;
     }
@@ -329,8 +326,7 @@
       margin-top: 12px;
     }
 
-    /* TABLET:
-       MANTENIAMO L'IMPOSTAZIONE GENERALE */
+    /* VERSIONE TABLET */
 
     @media (max-width: 900px) and (min-width: 601px) {
 
@@ -371,12 +367,11 @@
 
     @media (max-width: 600px) {
 
-      /* FOTO PANORAMICA */
+      /* PANORAMA */
 
       .hero {
-        min-height: 0;
-        height: 58svh;
         min-height: 360px;
+        height: 58svh;
         max-height: 620px;
         background-position: center center;
         display: flex;
@@ -387,7 +382,7 @@
         isolation: isolate;
       }
 
-      /* SFUMATURA LEGGERA SOLO IN BASSO */
+      /* SFUMATURA INFERIORE */
 
       .hero::before {
         content: "";
@@ -410,6 +405,26 @@
         background: transparent;
       }
 
+      /* NOME AZIENDA IN ALTO */
+
+      .hero-brand {
+        display: block;
+        position: absolute;
+        top: 28px;
+        left: 12px;
+        right: 12px;
+        margin: 0;
+        font-size: 21px;
+        font-weight: 600;
+        letter-spacing: 0.3px;
+        line-height: 1.35;
+        color: white;
+        text-align: center;
+        text-shadow: 0 2px 7px rgba(0,0,0,0.55);
+      }
+
+      /* TITOLO IN BASSO */
+
       .hero h1 {
         margin: 0;
         font-size: clamp(31px, 8vw, 43px);
@@ -418,33 +433,23 @@
         text-shadow: 0 2px 8px rgba(0,0,0,0.40);
       }
 
-      /* NASCONDIAMO NELLA FOTO LE ALTRE SCRITTE */
+      /* INFORMAZIONI SPOSTATE SOTTO LA FOTO */
 
-      .hero-brand,
       .hero-subtitle,
       .hero .badge,
       .hero .marchio-montagna {
         display: none;
       }
 
-      /* BLOCCO INFORMATIVO SOTTO LA FOTO */
-
       .hero-mobile-info {
         display: block;
         background: #f5f1ea;
-        padding: 25px 22px 30px;
+        padding: 24px 22px 12px;
         text-align: center;
       }
 
-      .mobile-brand {
-        margin: 0 0 8px;
-        font-size: 19px;
-        font-weight: 600;
-        color: #29251f;
-      }
-
       .mobile-subtitle {
-        margin: 0 0 18px;
+        margin: 0 0 17px;
         font-size: 16px;
         color: #5c5448;
       }
@@ -471,6 +476,12 @@
       .section h2 {
         font-size: 29px;
         margin-bottom: 20px;
+      }
+
+      /* RIDUZIONE SPAZIO PRIMA DI CHI SONO */
+
+      .hero-mobile-info + .section {
+        padding-top: 28px;
       }
 
       /* CHI SONO */
@@ -526,18 +537,12 @@
         width: 100%;
       }
 
-      .lavoro-item .lavoro-foto {
-        order: 1;
-      }
-
-      .lavoro-item .lavoro-testo {
-        order: 2;
-      }
-
+      .lavoro-item .lavoro-foto,
       .lavoro-item.invertito .lavoro-foto {
         order: 1;
       }
 
+      .lavoro-item .lavoro-testo,
       .lavoro-item.invertito .lavoro-testo {
         order: 2;
       }
@@ -587,8 +592,7 @@
         font-size: 16px;
       }
 
-      /* FOTO FINALE:
-         NESSUNO SCORRIMENTO LATERALE */
+      /* FOTO FINALE */
 
       .miele-foto {
         display: block;
@@ -602,9 +606,7 @@
       .footer {
         padding: 25px 18px;
       }
-
     }
-
   </style>
 </head>
 
@@ -638,13 +640,9 @@
     </div>
   </section>
 
-  <!-- INFORMAZIONI VISIBILI SU SMARTPHONE -->
+  <!-- INFORMAZIONI SMARTPHONE -->
 
   <div class="hero-mobile-info">
-
-    <p class="mobile-brand">
-      Apicoltura Baroni Francesco
-    </p>
 
     <p class="mobile-subtitle">
       Esclusivamente da pascoli alpini
