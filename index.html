@@ -5,6 +5,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Apicoltura Baroni | Miele di Valtellina</title>
+
   <style>
     * {
       box-sizing: border-box;
@@ -21,6 +22,14 @@
     img {
       max-width: 100%;
       display: block;
+    }
+
+    a {
+      color: #80601e;
+    }
+
+    a:hover {
+      color: #ad812a;
     }
 
     .hero {
@@ -141,6 +150,89 @@
       background: #c18e2c;
     }
 
+    /* NUOVA SEZIONE: IL LAVORO DELL'APICOLTORE */
+
+    .lavoro {
+      background: #f5f1ea;
+    }
+
+    .lavoro-intro {
+      max-width: 830px;
+      margin: 0 auto 60px;
+      text-align: center;
+      font-size: 18px;
+      color: #4a433b;
+    }
+
+    .lavoro-item {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 45px;
+      align-items: center;
+      margin-bottom: 70px;
+    }
+
+    .lavoro-item:last-child {
+      margin-bottom: 0;
+    }
+
+    .lavoro-item img {
+      width: 100%;
+      height: 340px;
+      object-fit: cover;
+      border-radius: 18px;
+      box-shadow: 0 6px 20px rgba(0,0,0,0.09);
+    }
+
+    .lavoro-testo {
+      padding: 10px 5px;
+    }
+
+    .lavoro-testo h3 {
+      font-size: 26px;
+      line-height: 1.3;
+      margin: 0 0 18px;
+      color: #29251f;
+    }
+
+    .lavoro-testo p {
+      font-size: 18px;
+      line-height: 1.8;
+      color: #4a433b;
+      margin: 0 0 14px;
+    }
+
+    .lavoro-link {
+      margin-top: 18px;
+      font-size: 15px;
+      line-height: 1.8;
+    }
+
+    .lavoro-link a {
+      text-decoration: underline;
+      text-underline-offset: 3px;
+    }
+
+    .lavoro-nota {
+      margin-top: 18px;
+      font-size: 14px;
+      color: #71695e;
+    }
+
+    .lavoro-nota a {
+      color: #80601e;
+    }
+
+    .lavoro-item.invertito .lavoro-foto {
+      order: 2;
+    }
+
+    .lavoro-item.invertito .lavoro-testo {
+      order: 1;
+    }
+
+    /* SEZIONI ORIGINALI */
+
     .mieli {
       background: #efe7da;
       color: #2b2b2b;
@@ -251,80 +343,380 @@
       .mieli-text {
         font-size: 18px;
       }
+
+      .lavoro-intro {
+        margin-bottom: 40px;
+        font-size: 17px;
+      }
+
+      .lavoro-item {
+        grid-template-columns: 1fr;
+        gap: 18px;
+        margin-bottom: 50px;
+      }
+
+      .lavoro-item img {
+        height: auto;
+        max-height: 420px;
+        aspect-ratio: 4 / 3;
+        object-fit: cover;
+      }
+
+      .lavoro-item.invertito .lavoro-foto,
+      .lavoro-item.invertito .lavoro-testo {
+        order: initial;
+      }
+
+      .lavoro-testo {
+        padding: 0 4px;
+      }
+
+      .lavoro-testo h3 {
+        font-size: 24px;
+        margin-bottom: 12px;
+      }
+
+      .lavoro-testo p {
+        font-size: 17px;
+      }
     }
   </style>
 </head>
+
 <body>
+
+  <!-- COPERTINA -->
 
   <section class="hero">
     <div class="hero-box">
       <p class="hero-brand">Apicoltura Baroni Francesco</p>
       <h1>Miele di Valtellina</h1>
       <p>Esclusivamente da pascoli alpini</p>
-      <div class="badge">Miele certificato “Prodotto di Montagna”</div>
-      <img src="marchio.jpg" alt="Marchio Prodotto di Montagna" class="marchio-montagna">
+
+      <div class="badge">
+        Miele certificato “Prodotto di Montagna”
+      </div>
+
+      <img
+        src="marchio.jpg"
+        alt="Marchio Prodotto di Montagna"
+        class="marchio-montagna"
+      >
     </div>
   </section>
 
+  <!-- CHI SONO -->
+
   <section class="section">
     <h2>Chi sono</h2>
+
     <div class="about">
-      <img src="apicoltore.jpg" alt="Apicoltore al lavoro">
+      <img
+        src="apicoltore.jpg"
+        alt="Apicoltore al lavoro"
+      >
+
       <div class="card-text">
-        <p>Sono Francesco Baroni, zootecnico e apicoltore in Valtellina.</p>
-        <p>Lavoro in un contesto montano, dove clima, fioriture e altitudine danno origine a mieli autentici, legati al territorio.</p>
-        <p>Sono socio conferitore di CONAPI, principale cooperativa apistica europea.</p>
-        <p>Il miele è esclusivamente di mia produzione, senza acquisti o miscelazioni di prodotto di terzi.</p>
+        <p>
+          Sono Francesco Baroni, zootecnico e apicoltore
+          in Valtellina.
+        </p>
+
+        <p>
+          Lavoro in un contesto montano, dove clima,
+          fioriture e altitudine danno origine a mieli
+          autentici, legati al territorio.
+        </p>
+
+        <p>
+          Sono socio conferitore di CONAPI,
+          principale cooperativa apistica europea.
+        </p>
+
+        <p>
+          Il miele è esclusivamente di mia produzione,
+          senza acquisti o miscelazioni di prodotto di terzi.
+        </p>
       </div>
     </div>
 
     <div class="video-link">
-      <p><strong>Francesco Baroni racconta il suo lavoro</strong><br>
-      Storie di apicoltori — CONAPI</p>
-      <a href="https://www.youtube.com/watch?v=jga0RL6IGVM"
-         target="_blank"
-         rel="noopener noreferrer">
+      <p>
+        <strong>
+          Francesco Baroni racconta il suo lavoro
+        </strong>
+        <br>
+        Storie di apicoltori — CONAPI
+      </p>
+
+      <a
+        href="https://www.youtube.com/watch?v=jga0RL6IGVM"
+        target="_blank"
+        rel="noopener noreferrer"
+      >
         Guarda il video su YouTube
       </a>
     </div>
   </section>
 
+  <!-- IL LAVORO DELL'APICOLTORE -->
+
+  <section class="lavoro">
+    <div class="section">
+
+      <h2>Il lavoro dell'apicoltore</h2>
+
+      <p class="lavoro-intro">
+        Dalla cura degli alveari alla selezione genetica
+        delle api, fino alla produzione del miele:
+        un lavoro che richiede esperienza, competenza
+        e conoscenza del territorio.
+      </p>
+
+      <!-- 1. CURA DEGLI ALVEARI -->
+
+      <div class="lavoro-item">
+
+        <div class="lavoro-foto">
+          <img
+            src="alveari.jpg"
+            alt="Francesco al lavoro negli apiari"
+            loading="lazy"
+          >
+        </div>
+
+        <div class="lavoro-testo">
+          <h3>La cura degli alveari</h3>
+
+          <p>
+            La gestione delle colonie segue i loro
+            cicli biologici e il ritmo delle stagioni,
+            adattandosi alle condizioni
+            dell'ambiente montano.
+          </p>
+        </div>
+
+      </div>
+
+      <!-- 2. SELEZIONE GENETICA -->
+
+      <div class="lavoro-item invertito">
+
+        <div class="lavoro-foto">
+          <img
+            src="regine.jpg"
+            alt="Attività di selezione e allevamento delle api regine"
+            loading="lazy"
+          >
+        </div>
+
+        <div class="lavoro-testo">
+          <h3>La selezione genetica</h3>
+
+          <p>
+            Francesco è <em>bee breeder</em> e fornisce
+            la linea paterna alla stazione di fecondazione
+            controllata di Val Fraele, a circa 1.950 metri
+            di quota. È inoltre socio di ZAC, associazione
+            austriaca impegnata nella selezione genetica
+            dell'ape carnica.
+          </p>
+
+          <div class="lavoro-link">
+            <a
+              href="https://www.aissa.info/lada-della-val-fraele/"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              Il progetto Val Fraele – AISSA
+            </a>
+            <br>
+            <a
+              href="https://www.zac.at/"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              ZAC – Associazione austriaca di selezione
+            </a>
+          </div>
+        </div>
+
+      </div>
+
+      <!-- 3. CONTROLLO DELLE COLONIE -->
+
+      <div class="lavoro-item">
+
+        <div class="lavoro-foto">
+          <img
+            src="controllo.jpg"
+            alt="Monitoraggio e controllo degli alveari"
+            loading="lazy"
+          >
+        </div>
+
+        <div class="lavoro-testo">
+          <h3>Il controllo delle colonie</h3>
+
+          <p>
+            Il monitoraggio delle famiglie comprende
+            la valutazione dello sviluppo,
+            delle condizioni sanitarie e
+            dell'andamento produttivo,
+            attraverso osservazioni
+            e rilevazioni periodiche.
+          </p>
+
+          <div class="lavoro-nota">
+            Approfondimento tecnico:
+            <a
+              href="https://www.lapisonline.it/protocollo-baroni-biologico-vs-convenzionale-tecnica-apistica/"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              Il Protocollo Baroni – l'apis
+            </a>
+          </div>
+        </div>
+
+      </div>
+
+      <!-- 4. MOVIMENTAZIONE DEGLI ALVEARI -->
+
+      <div class="lavoro-item invertito">
+
+        <div class="lavoro-foto">
+          <img
+            src="montagna.jpg"
+            alt="Alveari e attività apistica nel territorio montano"
+            loading="lazy"
+          >
+        </div>
+
+        <div class="lavoro-testo">
+          <h3>La movimentazione degli alveari</h3>
+
+          <p>
+            Gli alveari vengono trasferiti seguendo
+            le fioriture, dal fondovalle ai pascoli
+            alpini, valorizzando le diverse risorse
+            nettarifere della Valtellina.
+          </p>
+        </div>
+
+      </div>
+
+      <!-- 5. CONFERIMENTO A CONAPI -->
+
+      <div class="lavoro-item">
+
+        <div class="lavoro-foto">
+          <img
+            src="conferimento.jpg"
+            alt="Conferimento del miele alla cooperativa CONAPI"
+            loading="lazy"
+          >
+        </div>
+
+        <div class="lavoro-testo">
+          <h3>Il conferimento a CONAPI</h3>
+
+          <p>
+            Il miele è interamente prodotto nei nostri
+            apiari. La maggior parte della produzione
+            viene conferita a CONAPI, cooperativa apistica
+            di cui Francesco è socio conferitore.
+            Una parte è invece confezionata in vasetti
+            per la vendita diretta.
+          </p>
+        </div>
+
+      </div>
+
+    </div>
+  </section>
+
+  <!-- I MIELI DELLA VALTELLINA -->
+
   <section class="section mieli">
+
     <h2>I mieli della Valtellina</h2>
 
     <div class="mieli-text">
-      <p>Dalle fioriture primaverili del fondovalle ai pascoli d'alta quota, ogni miele esprime un ambiente diverso.</p>
 
-      <p>Acacia, tiglio, castagno, millefiori e mieli alpini: varietà e disponibilità cambiano ogni anno, seguendo il ritmo delle stagioni.</p>
+      <p>
+        Dalle fioriture primaverili del fondovalle
+        ai pascoli d'alta quota, ogni miele esprime
+        un ambiente diverso.
+      </p>
+
+      <p>
+        Acacia, tiglio, castagno, millefiori e mieli
+        alpini: varietà e disponibilità cambiano
+        ogni anno, seguendo il ritmo delle stagioni.
+      </p>
+
     </div>
   </section>
 
+  <!-- CONTATTI -->
+
   <section class="section">
+
     <div class="contact-box">
+
       <h2>Contatti</h2>
-      <p><strong>Apicoltura Baroni Francesco</strong></p>
+
+      <p>
+        <strong>Apicoltura Baroni Francesco</strong>
+      </p>
+
       <p>Via Molini 10</p>
+
       <p>23026 Ponte in Valtellina (Sondrio)</p>
+
       <p>Partita IVA 00843770140</p>
+
       <p>francesco.baroni.fb@gmail.com</p>
+
       <p>(+39) 3290624159</p>
+
     </div>
   </section>
 
+  <!-- IL MIO MIELE -->
+
   <section class="section">
+
     <h2>Il mio miele</h2>
-    <img src="mieli.jpg" alt="Vasetti di miele" style="border-radius:20px; max-width:900px; margin:30px auto; display:block;">
+
+    <img
+      src="mieli.jpg"
+      alt="Vasetti di miele"
+      style="border-radius:20px; max-width:900px; margin:30px auto; display:block;"
+      loading="lazy"
+    >
+
   </section>
+
+  <!-- PIE' DI PAGINA -->
 
   <footer class="footer">
+
     <div class="footer-content">
+
       <p>© Apicoltura Baroni Francesco</p>
 
       <p class="footer-privacy">
-        Questo sito non prevede moduli di raccolta dati né strumenti di tracciamento attivo.
-        Eventuali dati tecnici (es. indirizzi IP) possono essere trattati automaticamente dai servizi di hosting.
+        Questo sito non prevede moduli di raccolta dati
+        né strumenti di tracciamento attivo.
+        Eventuali dati tecnici (es. indirizzi IP)
+        possono essere trattati automaticamente
+        dai servizi di hosting.
       </p>
+
     </div>
+
   </footer>
 
 </body>
